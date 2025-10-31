@@ -1,0 +1,138 @@
+/* src/styles/login.css */
+
+/* --- Contenedor Principal y Layout --- */
+.login-page-container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  /* Fondo gris claro para el área principal */
+  background-color: #f0f2f5; 
+  font-family: Arial, sans-serif;
+}
+
+/* --- Barra Superior (Header) --- */
+.login-header {
+  width: 100%;
+  background-color: #2a2a2a; /* Gris oscuro/casi negro */
+  color: #d4d4d4;
+  padding: 10px 40px;
+  box-sizing: border-box;
+  font-size: 0.9rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* --- Contenido Principal (Formulario) --- */
+.login-main {
+  flex-grow: 1; /* Hace que ocupe el espacio restante */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.login-card {
+  background: #ffffff;
+  padding: 2.5rem 3rem;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 420px;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* --- Título "SAVINCO" dentro de la tarjeta --- */
+.login-card-title {
+  text-align: center;
+  color: #333; /* Color oscuro para el texto */
+  font-weight: 700; /* Un poco más grueso */
+  font-size: 1.75rem; /* Tamaño de la fuente */
+  letter-spacing: 1.5px; /* Espacio entre letras */
+  margin-bottom: 2rem; /* Espacio antes del campo "Usuario" */
+}
+
+/* --- Grupos de Inputs --- */
+.input-group {
+  margin-bottom: 1.25rem;
+}
+
+.input-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #555;
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 0.75rem 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box;
+  font-size: 1rem;
+}
+
+/* --- Link de "Olvidaste..." --- */
+.forgot-password-link {
+  display: block;
+  text-align: left; /* Alineado a la izquierda */
+  font-size: 0.8rem;
+  color: #777;
+  text-decoration: none;
+  margin-bottom: 1.5rem; /* Espacio antes del botón */
+}
+
+.forgot-password-link:hover {
+  text-decoration: underline;
+}
+
+/* --- Botón de LOG IN --- */
+.login-button {
+  width: 100%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 5px;
+  background-color: #fecb2f; /* Amarillo */
+  color: #222;
+  font-size: 1rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 1rem;
+}
+
+.login-button:hover {
+  background-color: #e4b72a;
+}
+
+.login-button:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* --- Mensaje de Error --- */
+.login-error {
+  color: #d9534f;
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* --- Barra Inferior (Footer) --- */
+.login-footer {
+  width: 100%;
+  background-color: #2a2a2a; /* Mismo color que el header */
+  color: #d4d4d4; /* Texto claro */
+  padding: 12px 40px;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between; /* Clave para el layout de 3 columnas */
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 500;
+  position: relative;
+  z-index: 10;
+}

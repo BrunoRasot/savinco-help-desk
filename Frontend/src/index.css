@@ -1,0 +1,24 @@
+/* src/index.css */
+
+/* Reseteo básico de CSS */
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: #f4f7f6; /* Un fondo gris claro para toda la app */
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+/* Reseteo de 'box-sizing' para que el padding no afecte el ancho */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}

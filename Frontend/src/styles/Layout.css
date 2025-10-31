@@ -1,0 +1,22 @@
+/* src/styles/Layout.css */
+
+.layout-container {
+  display: flex;
+  min-height: 100vh; /* Ocupa toda la altura */
+}
+
+.layout-content {
+  flex-grow: 1; /* Ocupa el resto del ancho */
+  padding: 2rem;
+  background-color: #f8f9fa; /* Fondo claro para el contenido */
+  position: relative; /* para posicionar el footer dentro del área de contenido */
+  min-height: 100vh;
+}
+
+.app-footer {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  color: #6c757d;
+  font-size: 0.9rem;
+}

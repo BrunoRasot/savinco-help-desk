@@ -1,0 +1,14 @@
+/* src/App.css */
+
+/*
+  Por ahora no necesitamos estilos aquí, ya que nuestros componentes
+  principales (Login, Dashboards) tendrán sus propios
+  archivos de CSS (ej: 'Login.css').
+  
+  Puedes usar este archivo más adelante para estilos del "layout"
+  principal, como una barra de navegación o un pie de página.
+*/
+
+.app-container {
+  text-align: center;
+}

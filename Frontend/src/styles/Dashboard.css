@@ -1,0 +1,151 @@
+/* src/styles/Dashboard.css */
+
+/* --- Layout Principal del Dashboard --- */
+.dashboard-layout {
+  padding: 2rem;
+}
+
+.dashboard-layout h1 {
+  font-size: 1.75rem; /* 28px */
+  color: #343a40;
+  margin-bottom: 1.5rem;
+}
+
+/* --- Bienvenida de Empleado --- */
+.welcome-section {
+  background-color: #ffffff;
+  padding: 2.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.welcome-section h1 {
+  font-size: 1.8rem;
+  margin-top: 0;
+}
+
+.welcome-section p {
+  font-size: 1.1rem;
+  color: #495057;
+  line-height: 1.6;
+}
+.welcome-section p strong {
+  color: #007bff;
+}
+
+/* --- Subtítulo para Admin --- */
+.stats-subtitle {
+  font-size: 1.5rem;
+  color: #343a40;
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #dee2e6;
+  padding-bottom: 0.75rem;
+}
+
+/* --- Grilla de Tarjetas de Estadísticas --- */
+.stats-grid {
+  display: grid;
+  /* Se ajustará automáticamente. 
+     Mínimo 250px de ancho, máximo 1fr (fracción del espacio) */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+/* --- Tarjeta de Estadística Individual --- */
+.stat-card {
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.stat-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Círculo de color del icono */
+.stat-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  min-width: 60px; /* Evita que se encoja */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+  font-size: 1.75rem;
+  color: #ffffff;
+}
+
+/* Información (Título y Valor) */
+.stat-info {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Evita que el texto se desborde */
+}
+
+.stat-title {
+  font-size: 0.9rem;
+  color: #6c757d;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.stat-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #343a40;
+  white-space: nowrap;
+}
+
+/* Colores de las Tarjetas (coinciden con el dashboard.jsx) */
+.stat-card.blue .stat-icon-wrapper { background-color: #007bff; }
+.stat-card.green .stat-icon-wrapper { background-color: #28a745; }
+.stat-card.purple .stat-icon-wrapper { background-color: #6f42c1; }
+.stat-card.red .stat-icon-wrapper { background-color: #dc3545; }
+.stat-card.yellow .stat-icon-wrapper { background-color: #ffc107; }
+.stat-card.grey .stat-icon-wrapper { background-color: #6c757d; }
+.stat-card.green-dark .stat-icon-wrapper { background-color: #198754; }
+
+/* --- Contenedor del Gráfico --- */
+.chart-container {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  margin-top: 2rem;
+}
+
+.chart-container h3 {
+  text-align: center;
+  margin-top: 0;
+  margin-bottom: 2rem;
+  color: #343a40;
+}
+
+/* --- Estados de Carga y Error --- */
+.spinner {
+  display: inline-block;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.form-error {
+  background-color: #f8d7da;
+  color: #721c24;
+  padding: 1rem;
+  border: 1px solid #f5c6cb;
+  border-radius: 6px;
+  text-align: center;
+}
+
