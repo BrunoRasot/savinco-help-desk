@@ -35,50 +35,55 @@ const Login = () => {
       </header>
 
       <main className="login-main">
-        <div className="login-card">
-          
-          {/* --- AQUÍ ESTÁ EL CAMBIO --- */}
-          <h2 className="login-card-title">SAVINCO</h2>
-          {/* --- FIN DEL CAMBIO --- */}
+        <div className="login-grid">
+          <aside className="login-hero" aria-hidden>
+            <div className="login-hero-inner">
+              <div className="login-hero-brand">SAVINCO</div>
+              <h1 className="login-hero-title">Hola, Bienvenido !</h1>
+              <p className="login-hero-copy">Sistema de gestión interna — soporte y tickets.</p>
+            </div>
+          </aside>
 
-          <form onSubmit={handleSubmit}>
-            <div className="input-group">
-              <label htmlFor="email">Usuario</label>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                disabled={loading}
-              />
+          <section className="login-panel">
+            <div className="login-card">
+              <form onSubmit={handleSubmit}>
+                <div className="input-group">
+                  <label htmlFor="email">Usuario</label>
+                  <input
+                    type="email"
+                    id="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    disabled={loading}
+                  />
+                </div>
+
+                <div className="input-group">
+                  <label htmlFor="password">Contraseña</label>
+                  <input
+                    type="password"
+                    id="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    disabled={loading}
+                  />
+                </div>
+                {error && <p className="login-error">{error}</p>}
+
+                <button type="submit" className="login-button" disabled={loading}>
+                  {loading ? '...' : 'LOG IN'}
+                </button>
+              </form>
             </div>
-            
-            <div className="input-group">
-              <label htmlFor="password">Contraseña</label>
-              <input
-                type="password"
-                id="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                disabled={loading}
-              />
-            </div>
-            
-            {error && <p className="login-error">{error}</p>}
-            
-            <button type="submit" className="login-button" disabled={loading}>
-              {loading ? '...' : 'LOG IN'}
-            </button>
-          </form>
+          </section>
         </div>
       </main>
 
       <footer className="login-footer">
         <span>Versión 1.0</span>
-        <span><strong>Copyright © 2025</strong></span>
-        <span>Todos los derechos reservados</span>
+        <span>Copyright © 2025 Todos los derechos reservados</span>
       </footer>
     </div>
   );

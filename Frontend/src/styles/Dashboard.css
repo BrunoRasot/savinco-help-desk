@@ -1,151 +1,229 @@
-/* src/styles/Dashboard.css */
+:root {
+  --bg: #f6f8fb;
+  --surface: #ffffff;
+  --muted: #7a8794;
+  --text: #0b1b2b;
+  --accent: #fecb2f;
+  --accent-2: #e4b72a;
+  --card-radius: 12px;
+  --card-shadow: 0 12px 30px rgba(12, 18, 28, 0.06);
+}
 
-/* --- Layout Principal del Dashboard --- */
 .dashboard-layout {
-  padding: 2rem;
+  padding: 2.25rem;
+  background: linear-gradient(180deg, rgba(250, 250, 252, 0.6), rgba(246, 248, 251, 0.6));
 }
 
 .dashboard-layout h1 {
-  font-size: 1.75rem; /* 28px */
-  color: #343a40;
-  margin-bottom: 1.5rem;
+  font-size: 1.95rem;
+  margin-bottom: 1.25rem;
+  color: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.2px;
 }
 
-/* --- Bienvenida de Empleado --- */
 .welcome-section {
-  background-color: #ffffff;
-  padding: 2.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  background: linear-gradient(180deg, var(--surface), rgba(255, 255, 255, 0.94));
+  padding: 2rem;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
 .welcome-section h1 {
-  font-size: 1.8rem;
-  margin-top: 0;
+  font-size: 1.6rem;
+  margin: 0;
+  color: var(--text)
 }
 
 .welcome-section p {
-  font-size: 1.1rem;
-  color: #495057;
-  line-height: 1.6;
+  font-size: 1rem;
+  color: var(--muted);
+  line-height: 1.6
 }
+
 .welcome-section p strong {
-  color: #007bff;
+  color: var(--accent)
 }
 
-/* --- Subtítulo para Admin --- */
 .stats-subtitle {
-  font-size: 1.5rem;
-  color: #343a40;
-  margin-top: 2.5rem;
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #dee2e6;
-  padding-bottom: 0.75rem;
+  font-size: 1.25rem;
+  color: var(--text);
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  position: relative;
 }
 
-/* --- Grilla de Tarjetas de Estadísticas --- */
+.stats-subtitle::after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(90deg, var(--accent), var(--accent-2));
+  margin-top: 10px;
+  border-radius: 4px
+}
+
 .stats-grid {
   display: grid;
-  /* Se ajustará automáticamente. 
-     Mínimo 250px de ancho, máximo 1fr (fracción del espacio) */
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem 1.25rem;
 }
 
-/* --- Tarjeta de Estadística Individual --- */
 .stat-card {
   display: flex;
   align-items: center;
-  background-color: #ffffff;
-  padding: 1.5rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  background: var(--surface);
+  padding: 1.15rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 22px rgba(12, 18, 28, 0.05);
+  transition: transform .18s ease, box-shadow .18s ease;
 }
 
 .stat-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 40px rgba(12, 18, 28, 0.08)
 }
 
-/* Círculo de color del icono */
 .stat-icon-wrapper {
-  width: 60px;
-  height: 60px;
-  min-width: 60px; /* Evita que se encoja */
-  border-radius: 50%;
+  width: 64px;
+  height: 64px;
+  min-width: 64px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 1rem;
-  font-size: 1.75rem;
-  color: #ffffff;
+  margin-right: 14px;
+  font-size: 1.6rem;
+  color: #fff;
+  box-shadow: 0 6px 18px rgba(5, 10, 20, 0.08)
 }
 
-/* Información (Título y Valor) */
 .stat-info {
   display: flex;
   flex-direction: column;
-  overflow: hidden; /* Evita que el texto se desborde */
+  overflow: hidden
 }
 
 .stat-title {
-  font-size: 0.9rem;
-  color: #6c757d;
-  font-weight: 600;
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 700;
   text-transform: uppercase;
-  white-space: nowrap;
+  letter-spacing: 0.9px
 }
 
 .stat-value {
-  font-size: 2.25rem;
-  font-weight: 700;
-  color: #343a40;
-  white-space: nowrap;
+  font-size: 1.9rem;
+  color: var(--text);
+  font-weight: 800
 }
 
-/* Colores de las Tarjetas (coinciden con el dashboard.jsx) */
-.stat-card.blue .stat-icon-wrapper { background-color: #007bff; }
-.stat-card.green .stat-icon-wrapper { background-color: #28a745; }
-.stat-card.purple .stat-icon-wrapper { background-color: #6f42c1; }
-.stat-card.red .stat-icon-wrapper { background-color: #dc3545; }
-.stat-card.yellow .stat-icon-wrapper { background-color: #ffc107; }
-.stat-card.grey .stat-icon-wrapper { background-color: #6c757d; }
-.stat-card.green-dark .stat-icon-wrapper { background-color: #198754; }
+.stat-card.blue .stat-icon-wrapper {
+  background: linear-gradient(135deg, #2b8cff, #1f6fe4)
+}
 
-/* --- Contenedor del Gráfico --- */
+.stat-card.green .stat-icon-wrapper {
+  background: linear-gradient(135deg, #2ecc71, #28a745)
+}
+
+.stat-card.purple .stat-icon-wrapper {
+  background: linear-gradient(135deg, #8b63ff, #6f42c1)
+}
+
+.stat-card.red .stat-icon-wrapper {
+  background: linear-gradient(135deg, #ff6b6b, #dc3545)
+}
+
+.stat-card.yellow .stat-icon-wrapper {
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  color: #111
+}
+
+.stat-card.grey .stat-icon-wrapper {
+  background: linear-gradient(135deg, #9aa3ad, #6c757d)
+}
+
+.stat-card.green-dark .stat-icon-wrapper {
+  background: linear-gradient(135deg, #1fa05a, #198754)
+}
+
 .chart-container {
-  background-color: #ffffff;
-  padding: 2rem;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  margin-top: 2rem;
+  background: var(--surface);
+  padding: 1.75rem;
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+  margin-top: 1.75rem
 }
 
 .chart-container h3 {
   text-align: center;
-  margin-top: 0;
-  margin-bottom: 2rem;
-  color: #343a40;
+  margin: 0 0 1.25rem;
+  color: var(--text);
+  font-weight: 700
 }
 
-/* --- Estados de Carga y Error --- */
 .spinner {
   display: inline-block;
-  animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite
 }
 
 @keyframes spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  from {
+    transform: rotate(0deg)
+  }
+
+  to {
+    transform: rotate(360deg)
+  }
 }
 
 .form-error {
-  background-color: #f8d7da;
-  color: #721c24;
-  padding: 1rem;
-  border: 1px solid #f5c6cb;
-  border-radius: 6px;
-  text-align: center;
+  background: #fff4f4;
+  color: #8b1d1d;
+  padding: 0.9rem;
+  border: 1px solid rgba(219, 46, 47, 0.08);
+  border-radius: 8px;
+  text-align: center
 }
 
+@media (max-width:920px) {
+  .dashboard-layout {
+    padding: 1rem
+  }
+
+  .stats-grid {
+    gap: 0.9rem
+  }
+
+  .stat-icon-wrapper {
+    width: 56px;
+    height: 56px;
+    min-width: 56px
+  }
+}
+
+@media (max-width:540px) {
+  .dashboard-layout h1 {
+    font-size: 1.35rem
+  }
+
+  .stat-value {
+    font-size: 1.45rem
+  }
+
+  .stat-icon-wrapper {
+    width: 48px;
+    height: 48px;
+    min-width: 48px
+  }
+}
+
+.stat-card .meta {
+  margin-left: auto;
+  color: var(--muted);
+  font-weight: 600
+}
